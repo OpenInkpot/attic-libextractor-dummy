@@ -21,7 +21,7 @@ install: build-indep
 	mkdir -p $(PKGDIR)/usr/include
 	install -m 644 extractor.h $(PKGDIR)/usr/include
 	mkdir -p $(PKGDIR)/usr/lib/pkgconfig
-	install -m 644 libextractor.pc $(PKGDIR)/usr/include
+	install -m 644 libextractor.pc $(PKGDIR)/usr/lib/pkgconfig
 
 binary-arch:
 
