@@ -1,0 +1,44 @@
+#!/usr/bin/make -f
+
+PKGDIR=debian/libextractor-dummy-dev
+
+build-arch:
+build-indep:
+
+build: build-arch build-indep
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+
+install: build-indep
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	mkdir -p $(PKGDIR)/usr/include
+	install -m 644 extractor.h $(PKGDIR)/usr/include
+	mkdir -p $(PKGDIR)/usr/lib/pkgconfig
+	install -m 644 libextractor.pc $(PKGDIR)/usr/include
+
+binary-arch:
+
+binary-indep: install
+	dh_testdir
+	dh_testroot
+ifneq (,$(findstring docs,$(SLIND_BUILD_OPTIONS)))
+	dh_installdocs -i
+	dh_istallchangelogs -i
+endif
+	dh_link -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

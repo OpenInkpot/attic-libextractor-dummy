@@ -1,0 +1,14 @@
+Source: libextractor-dummy
+Priority: optional
+Maintainer: Mikhail Gusarov <dottedmag@dottedmag.net>
+Build-Depends: debhelper (>= 4.2.0)
+Section: libdevel
+XCS-Cross-Host-Build-Depends: debhelper (>= 4.2.0)
+Standards-Version: 3.8.0
+
+Package: libextractor-dummy-dev
+Architecture: all
+Description: extractor.h API for libextractor
+ This package provides extractor.h API for libextractor for those who don't like
+ using libxetractor implementation of plugins loader, but uses libextractor
+ plugins.

@@ -1,0 +1,6 @@
+Name: libextractor
+Description: Metadata extraction library
+Version: 0.5.20c
+Requires: 
+Libs:
+Cflags:
