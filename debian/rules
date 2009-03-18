@@ -28,10 +28,6 @@ binary-arch:
 binary-indep: install
 	dh_testdir
 	dh_testroot
-ifneq (,$(findstring docs,$(SLIND_BUILD_OPTIONS)))
-	dh_installdocs -i
-	dh_istallchangelogs -i
-endif
 	dh_link -i
 	dh_compress -i
 	dh_fixperms -i
