@@ -1,3 +1,9 @@
+libextractor-dummy (0.5.20c-2) asimov; urgency=low
+
+  * Version bump
+
+ -- Alexander Kerner <lunohod@openinkpot.org>  Wed, 18 Mar 2009 01:12:05 +0100
+
 libextractor-dummy (0.5.20c-1) unstable; urgency=low
 
   * Initial OpenInkpot release.
